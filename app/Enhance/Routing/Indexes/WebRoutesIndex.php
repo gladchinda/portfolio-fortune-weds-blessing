@@ -6,7 +6,9 @@ class WebRoutesIndex extends AbstractRoutesIndex
 {
 	public function loadRoutes()
 	{
-		$this->router->get('/', function() {
+		$R = $this->router;
+
+		$R->get('/', function() {
 			return view('index');
 		});
 	}

@@ -26,6 +26,15 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot();
+
+        // Model Bindings
+        Route::model('event', \App\Models\Event::class);
+        Route::model('couple', \App\Models\Couple::class);
+        Route::model('person', \App\Models\Person::class);
+        Route::model('account', \App\Models\Account::class);
+        Route::model('attendee', \App\Models\Attendee::class);
+        Route::model('invite', \App\Models\Invitation::class);
+        Route::model('location', \App\Models\Location::class);
     }
 
     /**
