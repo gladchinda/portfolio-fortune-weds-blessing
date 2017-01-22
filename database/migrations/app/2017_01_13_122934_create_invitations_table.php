@@ -15,6 +15,7 @@ class CreateInvitationsTable extends Migration
     {
         Schema::create('invitations', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('from');
             $table->enum('via', ['email', 'phone']);
             $table->string('recipient')->unique();
             $table->string('code')->unique();
@@ -22,6 +23,8 @@ class CreateInvitationsTable extends Migration
             $table->datetime('created');
             $table->datetime('followed')->nullable();
             $table->enum('status', ['accepted', 'rejected'])->nullable();
+
+            $table->foreign('from')->references('id')->on('accounts');
         });
     }
 
@@ -32,6 +35,12 @@ class CreateInvitationsTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
+
+        Schema::table('invitations', function ($table) {
+            $table->dropForeign(['from']);
+        });
+        
         Schema::dropIfExists('invitations');
     }
 }

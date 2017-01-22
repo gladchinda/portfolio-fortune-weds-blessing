@@ -20,7 +20,7 @@ class CreateLocationsTable extends Migration
             $table->string('city');
             $table->string('state');
             $table->string('country');
-            $table->string('photo');
+            $table->string('photo')->nullable();
         });
     }
 
