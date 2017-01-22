@@ -21,7 +21,7 @@ class CreateCoordinatesTable extends Migration
 
             $table->primary('location');
 
-            $table->foreign('location')->references('id')->on('locations')->onDelete('cascade');
+            $table->foreign('location')->references('id')->on('locations');
         });
     }
 
