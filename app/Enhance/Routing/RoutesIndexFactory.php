@@ -5,6 +5,7 @@ namespace App\Enhance\Routing;
 use BadMethodCallException;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
+use App\Enhance\Routing\Indexes\ApiRoutesIndex;
 use App\Enhance\Routing\Indexes\WebRoutesIndex;
 
 class RoutesIndexFactory
@@ -13,6 +14,11 @@ class RoutesIndexFactory
 	{
 		$index->loadRoutes();
 		return $this;
+	}
+
+	protected function loadApiRoutes()
+	{
+		return $this->loadRoutes(new ApiRoutesIndex);
 	}
 
 	protected function loadWebRoutes()
