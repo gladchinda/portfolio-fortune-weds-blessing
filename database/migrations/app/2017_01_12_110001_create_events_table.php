@@ -23,7 +23,7 @@ class CreateEventsTable extends Migration
             $table->time('start');
             $table->time('end')->nullable()->default(null);
 
-            $table->foreign('location')->references('id')->on('locations')->onDelete('cascade');
+            $table->foreign('location')->references('id')->on('locations');
         });
     }
 

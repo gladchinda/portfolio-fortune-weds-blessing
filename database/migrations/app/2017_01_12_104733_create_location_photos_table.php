@@ -19,7 +19,7 @@ class CreateLocationPhotosTable extends Migration
 
             $table->unique(['location', 'photo']);
 
-            $table->foreign('location')->references('id')->on('locations')->onDelete('cascade');
+            $table->foreign('location')->references('id')->on('locations');
         });
     }
 

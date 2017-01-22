@@ -19,7 +19,7 @@ class CreateCouplePhotosTable extends Migration
 
             $table->unique(['who', 'photo']);
 
-            $table->foreign('who')->references('id')->on('couple')->onDelete('cascade');
+            $table->foreign('who')->references('id')->on('couple');
         });
     }
 
