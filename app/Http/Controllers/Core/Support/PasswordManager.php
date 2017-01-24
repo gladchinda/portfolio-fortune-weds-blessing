@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Core\Support;
 
 use DB;
 use Hash;
-use Carbon\Carbon;
+use Carbon;
 use App\Models\Salt;
 use App\Models\Secret;
 use App\Models\Account;

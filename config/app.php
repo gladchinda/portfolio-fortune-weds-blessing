@@ -166,8 +166,8 @@ return [
         /*
          * Package Service Providers...
          */
-
-        //
+        
+        App\Enhance\Providers\TwilioServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -227,6 +227,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         // Extended Aliases
+        'Carbon' => Carbon\Carbon::class,
+        'Keygen' => Keygen\Keygen::class,
+        'Twilio' => App\Enhance\Providers\TwilioFacade::class,
         'Enhance' => App\Enhance\EnhancedServiceFactory::class,
 
     ],
