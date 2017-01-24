@@ -2,9 +2,9 @@
 
 namespace App\Enhance\File\Storage;
 
+use Carbon;
 use Config;
 use Storage;
-use Carbon\Carbon;
 use Illuminate\Http\UploadedFile;
 use App\Enhance\File\Storage\Exceptions\FileNotUploadedException;
 use App\Enhance\File\Storage\Exceptions\DuplicateFileUploadedException;

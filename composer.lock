@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b945ad3e08dc15bd9cf127f07c3d525a",
-    "content-hash": "139c2ab5a21bf789be2100a382feb395",
+    "hash": "cf32215fdc58b9fd9fb7c4a29020b8e3",
+    "content-hash": "9f3df08e3d1b514d04a3bf847c5461b9",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -240,6 +240,50 @@
                 "string"
             ],
             "time": "2015-11-06 14:35:42"
+        },
+        {
+            "name": "gladcodes/keygen",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gladchinda/keygen-php.git",
+                "reference": "2f096aaa9b9935c05b21e349aca90b686cb23bfc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gladchinda/keygen-php/zipball/2f096aaa9b9935c05b21e349aca90b686cb23bfc",
+                "reference": "2f096aaa9b9935c05b21e349aca90b686cb23bfc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Keygen\\": "src/Keygen"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Glad Chinda",
+                    "email": "gladxeqs@gmail.com"
+                }
+            ],
+            "description": "A fluent PHP random key generator.",
+            "keywords": [
+                "generator",
+                "key",
+                "key generator",
+                "keygen",
+                "php",
+                "random"
+            ],
+            "time": "2017-01-10 15:24:13"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2219,6 +2263,52 @@
                 "dump"
             ],
             "time": "2016-11-03 08:04:31"
+        },
+        {
+            "name": "twilio/sdk",
+            "version": "5.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twilio/twilio-php.git",
+                "reference": "354b5859cc7386642b8842a8b9e3dee01e957235"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/354b5859cc7386642b8842a8b9e3dee01e957235",
+                "reference": "354b5859cc7386642b8842a8b9e3dee01e957235",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "apigen/apigen": "^4.1",
+                "phpunit/phpunit": "4.5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Twilio\\": "Twilio/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Twilio API Team",
+                    "email": "api@twilio.com"
+                }
+            ],
+            "description": "A PHP wrapper for Twilio's API",
+            "homepage": "http://github.com/twilio/twilio-php",
+            "keywords": [
+                "api",
+                "sms",
+                "twilio"
+            ],
+            "time": "2016-10-12 17:28:31"
         },
         {
             "name": "vlucas/phpdotenv",

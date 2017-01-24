@@ -16,7 +16,9 @@ class PeopleController extends Controller
 	}
 
 	public function createNewAttendee(Request $request)
-	{}
+	{
+		
+	}
 
 	public function getAttendee(Request $request, Attendee $attendee)
 	{

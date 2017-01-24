@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Core;
 
 use DB;
 use Auth;
-use Carbon\Carbon;
+use Carbon;
 use App\Models\Email;
 use App\Models\Account;
 use Illuminate\Support\Str;
