@@ -17,6 +17,14 @@ class Couple extends Model
 
 	public static function both()
 	{
-		return static::all();
+		return collect([
+			'bride' => static::which('bride')->first(),
+			'groom' => static::which('groom')->first(),
+		]);
+	}
+
+	public function scopeWhich($query, $which)
+	{
+		return in_array($which, ['bride', 'groom']) ? $query->whereWhich($which) : $query;
 	}
 }

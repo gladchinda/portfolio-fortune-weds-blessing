@@ -29,12 +29,22 @@ class RouteServiceProvider extends ServiceProvider
 
         // Model Bindings
         Route::model('event', \App\Models\Event::class);
-        Route::model('couple', \App\Models\Couple::class);
         Route::model('person', \App\Models\Person::class);
         Route::model('account', \App\Models\Account::class);
         Route::model('attendee', \App\Models\Attendee::class);
-        Route::model('invite', \App\Models\Invitation::class);
         Route::model('location', \App\Models\Location::class);
+
+        Route::bind('couple', function ($which) {
+            return \App\Models\Couple::unguarded(function() use ($which) {
+                return in_array($which, ['bride', 'groom'])
+                    ? \App\Models\Couple::firstOrNew(['which' => $which])
+                    : null;
+            });
+        });
+
+        Route::bind('iv_token', function ($token) {
+            return \App\Models\Invitation::getInvitationFromToken($token);
+        });
     }
 
     /**

@@ -67,18 +67,17 @@ class InvitationController extends Controller
 		return Invitation::all();
 	}
 
-	protected function followInvitationRequest(Request $request, $token, $accept = true)
+	protected function followInvitationRequest(Request $request, Invitation $invitation, $accept = true)
 	{
-		return Invitation::unguarded(function() use ($token, $accept) {
+		return Invitation::unguarded(function() use ($invitation, $accept) {
 			
 			$accept = !is_bool($accept) ?: $accept;
-			$invitation = Invitation::getInvitationFromToken($token);
 
-			if ($invitation->followed->isPast()) {
+			if ($invitation->followed instanceof Carbon) {
 				throw new Exception('Invitation has been followed already.');
 			}
 
-			$invitation->getAllInvitationsForRecipient()->each(function ($iv, $accept) {
+			$invitation->getAllInvitationsForRecipient()->each(function ($iv) use ($accept) {
 
 				$iv->update([
 					'followed' => Carbon::now()->toDateTimeString(),
@@ -88,17 +87,17 @@ class InvitationController extends Controller
 				// fire a broadcast event
 			});
 
-			return $invitation;
+			return $invitation->fresh();
 		});
 	}
 
-	public function acceptInvitation(Request $request, $token)
+	public function acceptInvitation(Request $request, Invitation $invitation)
 	{
-		return $this->followInvitationRequest($request, $token, true);
+		return $this->followInvitationRequest($request, $invitation, true);
 	}
 
-	public function rejectInvitation(Request $request, $token)
+	public function rejectInvitation(Request $request, Invitation $invitation)
 	{
-		return $this->followInvitationRequest($request, $token, false);
+		return $this->followInvitationRequest($request, $invitation, false);
 	}
 }
