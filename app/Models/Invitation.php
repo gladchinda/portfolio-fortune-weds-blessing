@@ -218,7 +218,7 @@ class Invitation extends Model
     	return $query->followed()->whereStatus('accepted');
     }
 
-    public function scopeAccepted($query)
+    public function scopeRejected($query)
     {
     	return $query->followed()->whereStatus('rejected');
     }

@@ -64,8 +64,8 @@ class ApiRoutesIndex extends AbstractRoutesIndex
 				$R->group(['prefix' => 'invitations'], function() use ($R) {
 
 					$R->get('/', 'InvitationController@getAllInvitations');
-					$R->post('/{token}/accept', 'InvitationController@acceptInvitation');
-					$R->post('/{token}/reject', 'InvitationController@rejectInvitation');
+					$R->post('/{iv_token}/accept', 'InvitationController@acceptInvitation');
+					$R->post('/{iv_token}/reject', 'InvitationController@rejectInvitation');
 				});
 
 				$R->group(['prefix' => 'couple'], function() use ($R) {

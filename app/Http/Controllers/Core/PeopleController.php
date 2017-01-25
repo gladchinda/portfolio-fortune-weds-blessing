@@ -16,9 +16,7 @@ class PeopleController extends Controller
 	}
 
 	public function createNewAttendee(Request $request)
-	{
-		
-	}
+	{}
 
 	public function getAttendee(Request $request, Attendee $attendee)
 	{
@@ -39,7 +37,18 @@ class PeopleController extends Controller
 	}
 
 	public function modifyOneCouple(Request $request, Couple $couple)
-	{}
+	{
+		return Couple::unguarded(function() use ($request, $couple) {
+
+			$input = collect($request->only('firstname', 'lastname', 'middlename', 'nickname', 'birthday', 'occupation', 'bio', 'community', 'lga', 'state', 'father', 'mother', 'facebook', 'instagram', 'twitter'));
+
+			$couple->forceFill($input->filter(function($value) {
+				return !!$value;
+			})->toArray())->save();
+
+			return $couple;
+		});
+	}
 
 	public function getCouplePhotos(Request $request, Couple $couple)
 	{
