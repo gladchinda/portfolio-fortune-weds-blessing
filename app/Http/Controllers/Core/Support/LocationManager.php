@@ -9,33 +9,14 @@ use Illuminate\Http\Request;
 use App\Enhance\File\Storage\FileStorage;
 use App\Enhance\File\Storage\Exceptions\FileNotUploadedException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
-use App\Enhance\File\Storage\Exceptions\StorageDiskNotAvailableException;
 
 trait LocationManager
 {
+    use UploadsPhoto;
+
     protected function uploadLocationPhotoFromRequest(Request $request, $photoRequired = true, $photoInput = null)
     {
-        $photoInput = is_string($photoInput) ? $photoInput : ( is_string($photoRequired) ? $photoRequired : 'photo' );
-
-        $photoRequired = !is_bool($photoRequired) ?: $photoRequired;
-
-        try {
-            $photoStorage = Enhance::storage($photoInput, 's3');
-        } catch (Exception $e) {
-            if ($e instanceof StorageDiskNotAvailableException || $photoRequired) {
-                throw $e;
-            }
-        }
-
-        if (isset($photoStorage) && $photoStorage instanceof FileStorage) {
-            $uploaded = $photoStorage->upload('images/locations');
-
-            if (! $photoStorage->isUploaded()) {
-                throw new FileNotUploadedException('Could not store location photo.');
-            }
-
-            return $photoStorage;
-        }
+        return $this->uploadPhotoFromRequest($request, 'images/locations', $photoRequired, $photoInput);
     }
 
     protected function createLocationFromRequest(Request $request, $photoRequired = true, $photoInput = null)
@@ -73,14 +54,5 @@ trait LocationManager
             'location' => $location,
             'photo' => $photoStorage,
         ];
-    }
-
-    protected function rollbackPhotoStorage(array $container, $photoKey = 'photo')
-    {
-        $photoStorage = $container[$photoKey];
-
-        if ($photoStorage && $photoStorage->isUploaded()) {
-            $photoStorage->rollback();
-        }
     }
 }

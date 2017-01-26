@@ -81,6 +81,8 @@ class ApiRoutesIndex extends AbstractRoutesIndex
 				$R->group(['prefix' => 'people'], function() use ($R) {
 
 					$R->get('/', 'PeopleController@getPeople');
+					$R->post('/', 'PeopleController@createPerson');
+
 					$R->get('/{person}', 'PeopleController@getPerson');
 					$R->put('/{person}', 'PeopleController@modifyPerson');
 
