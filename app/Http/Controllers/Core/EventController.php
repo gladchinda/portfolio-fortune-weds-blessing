@@ -7,8 +7,10 @@ use Exception;
 use App\Models\Event;
 use App\Models\Label;
 use App\Models\Service;
+use App\Models\EventLabel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Core\Support\ArrayInspector;
 use App\Http\Controllers\Core\Support\LocationManager;
 
 class EventController extends Controller
@@ -22,13 +24,41 @@ class EventController extends Controller
 
 	public function createLabel(Request $request)
 	{
-		$label = $request->input('label');
+		return DB::transaction(function() use ($request) {
 
-    	if (Label::whereLabel($label)->count() > 0) {
-    		throw new Exception('Label already exists.');
-    	}
+			$label = $request->input('label');
+			$events = $request->input('events');
 
-		return Label::forceCreate(['label' => $label]);
+	    	if (Label::whereLabel($label)->count() > 0) {
+	    		throw new Exception('Label already exists.');
+	    	}
+
+	    	$label = Label::forceCreate(['label' => $label]);
+
+	    	if (! (is_array($events) && ArrayInspector::isIndexed($events))) {
+	    		// throw new exception
+	    	}
+
+			foreach ($events as $data) {
+
+				$data = collect($data)->only('event', 'many')->toArray();
+
+				// validate data
+
+				$event = Event::findOrFail($data['event']);
+
+				$many = $data['many'];
+				$many = !is_bool($many) ?: $many;
+
+				$eventLabel = EventLabel::forceCreate([
+					'event' => $event->id,
+					'label' => $label->id,
+					'many' => $many,
+				]);
+			}
+
+			return $label->fresh();
+		});
 	}
 
 	public function getServices(Request $request)

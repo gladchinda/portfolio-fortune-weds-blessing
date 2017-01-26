@@ -23,6 +23,11 @@ class Event extends Model
 		return Location::find($location);
 	}
 
+	public function labels()
+	{
+		return $this->hasMany(EventLabel::class, 'event');
+	}
+
 	public function crew()
 	{
 		return $this->hasMany(EventService::class, 'event');
