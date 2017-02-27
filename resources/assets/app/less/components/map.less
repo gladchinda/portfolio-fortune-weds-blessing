@@ -1,0 +1,47 @@
+#events-location-map {
+	position: relative;
+	border-top: 1px solid #DDD;
+	border-bottom: 1px solid #DDD;
+	height: 600px;
+
+	& > .events-map-sidebar {
+		padding: 0;
+		border-right: 1px solid #DDD;
+		height: inherit;
+		background: saturate(darken(#5A6D7D, 27.5%), 25%);
+
+		& > .events-btn-group {
+			padding: 20px 5%;
+			background: #FFF;
+			box-shadow: 0 1px 0 rgba(30,42,52,0.5);
+		}
+
+		& > .event-cover-banner {
+			padding: 0;
+			position: relative;
+
+			.event-title {
+				font: 100 40pt/40pt 'Segoe UI Light';
+				color: #FFF;
+				padding: 0 5%;
+				position: absolute;
+				left: 0;
+				bottom: 7.5%;
+			}
+		}
+	}
+
+	& > .events-map-container {
+		padding: 0;
+		position: relative;
+		height: inherit;
+	}
+}
+
+#events-map-canvas {
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	background: #EEE;
+	position: absolute;
+}

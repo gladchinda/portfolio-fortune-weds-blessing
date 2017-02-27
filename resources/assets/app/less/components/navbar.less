@@ -34,16 +34,16 @@
 	.navbar-header {
 
 		.navbar-brand {
-			display: table;
 
 			> * {
-				display: table-cell;
+				display: inline-block;
 				position: relative;
+				bottom: 15px;
+				vertical-align: middle;
 			}
 
 			img {
 				height: 250%;
-				margin-top: -32.5%;
 			}
 
 			.brand-label {
@@ -51,7 +51,6 @@
 				font-weight: bold;
 				left: 15px;
 				color: #000;
-				vertical-align: middle;
 				display: none;
 			}
 		}
@@ -113,17 +112,12 @@
 				margin-left: 5%;
 				margin-right: 5%;
 			}
-
-			@media (min-width: 768px) {
-				margin-left: 10%;
-				margin-right: 10%;
-			}
 		}
 
 		.navbar-header {
 			.navbar-brand {
 				.brand-label {
-					display: table-cell;
+					display: inline-block;
 				}
 			}
 		}

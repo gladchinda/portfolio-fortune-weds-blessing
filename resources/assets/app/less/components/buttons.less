@@ -1,0 +1,50 @@
+@button-border-color: saturate(darken(#5A6D7D, 10%), 25%);
+
+.btn-group.btn-group-justified {
+	border: 2px solid @button-border-color;
+	border-radius: 4px;
+	width: 95%;
+
+	@media (min-width: 480px) {
+		width: 65%;
+	}
+
+	@media (min-width: 768px) {
+		width: 100%;
+	}
+
+	.btn-group {
+		&:first-child > .btn {
+			border-top-left-radius: 1px;
+			border-bottom-left-radius: 1px;
+		}
+
+		&:last-child > .btn {
+			border-right: 0;
+			border-top-right-radius: 1px;
+			border-bottom-right-radius: 1px;
+		}
+
+		& > .btn {
+			border: 0;
+			outline: 0;
+			box-shadow: none;
+			text-shadow: none;
+			background: transparent;
+			border-right: 2px solid @button-border-color;
+			height: 36px;
+			font-weight: bold;
+			font-size: 0.8125em;
+			color: darken(@button-border-color, 0%);
+
+			&:hover {
+				background: lighten(@button-border-color, 66%);
+			}
+		}
+
+		&.active > .btn {
+			background: @button-border-color !important;
+			color: #FFF !important;
+		}
+	}
+}
