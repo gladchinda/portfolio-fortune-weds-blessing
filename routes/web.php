@@ -15,4 +15,4 @@
 //     return view('welcome');
 // });
 
-Enhance::routes([/*'web', */'api']);
+Enhance::routes(['web'/*, 'api'*/]);
