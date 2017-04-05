@@ -38,7 +38,7 @@ gulp.task('vendor-css', () => {
 });
 
 // Create app.css file
-gulp.task('build-css', () => 
+gulp.task('build-css', () =>
 
 	gulp.src(ASSETS_PATH + '/less/app.less')
 		.pipe(sourcemaps.init())
@@ -53,7 +53,7 @@ gulp.task('build-css', () =>
 );
 
 // Copy icon fonts
-gulp.task('copy-fonts', () => 
+gulp.task('copy-fonts', () =>
 
 	gulp.src(BOOTSTRAP + '/fonts/**/*')
 		.pipe(gulp.dest(BUILD_PATH + '/fonts'))

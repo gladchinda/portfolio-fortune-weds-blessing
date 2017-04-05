@@ -1,5 +1,4 @@
 {
-  "name": "ui-dependencies",
   "ignore": [
     "**/.*",
     "node_modules",
