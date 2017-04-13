@@ -3,13 +3,10 @@
 @section('content')
     @parent
 
-    <!-- begin navbar -->
-
-    <!-- end navbar -->
-
     <!-- begin hero -->
-
+    @include('app.sections.hero')
     <!-- end hero -->
 
-    <div class="container-fluid"></div>
+    @include('app.sections.couple')
+    @include('app.sections.storyboard')
 @endsection

@@ -1,113 +1,233 @@
-#story-board {
-	padding: 120px 0;
-	background: #FCFCFD;
+@import (reference) "../variables";
+@import (reference) "../mixins";
 
-	& > .story-board-header {
-		font: 100 36pt/36pt 'Segoe UI Light';
-		margin-bottom: 80px;
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: greyscale;
+}
 
-		> * {
-			display: block;
-		}
+#couple-section {
 
-		.small-title {
-			color: #666;
-			font: bold 0.425em 'Tw Cen Mt';
-			padding-bottom: 8px;
-		}
+	padding: 0;
+	position: relative;
 
-		.main-title {
-			color: #5A6D7D;
-			font-size: 150%;
-			font-weight: 600;
-		}
+	.row {
+		.edge-row;
 	}
 
-	& > .story-body {
-		font-family: 'Segoe UI Light';
-		padding: 40px 20% 60px;
-		color: #888;
-		font-weight: 600;
+	@media screen and (min-width: 992px) {
+
+		>.row:extend(.cover-box) {
+			height: 100vh;
+
+			>* {
+				position: relative;
+				height: inherit;
+			}
+		}
+
+	}
+
+	@media screen and (min-width: 992px) and (min-height: 768px) {
+		>.row:extend(.cover-box) {
+			height: 768px !important;
+		}
 	}
 }
 
-#meet-the-couple {
-	.couple-box {
-		display: table;
-		margin: 0 auto;
-		background: desaturate(#369, 10%);
-		border-radius: 10px;
-		box-shadow: 0 0 1px 1px rgba(200,200,200,0.5);
-		border: 0px solid #EEE;
-		width: 80%;
+#photos-section {
 
-		& > .photo-cover {
+	background: lighten(@event-border-color, 27%);
+	border-top: 1px solid @base-border-color;
+	border-bottom: 1px solid @base-border-color;
+	border-collapse: collapse;
+	overflow: hidden;
+
+	@media screen and (min-width: 992px) {
+		border-right: 1px solid @base-border-color;
+	}
+
+	@media screen and (max-width: 992px) {
+		height: 560px !important;
+	}
+
+	@media screen and (orientation: landscape) and (max-height: 560px) {
+		height: 560px !important;
+	}
+
+	.row:extend(.cover-box) {
+		background: transparent url("/assets/img/photo-section-transparent-bg.png") no-repeat center;
+		background-size: cover;
+	}
+
+	.photo-icon {
+
+		height: 50%;
+
+		>img.img-responsive {
+			top: 50%;
 			position: relative;
 
-			& > img {
-				border-top-left-radius: 10px;
-				border-top-right-radius: 10px;
+			@media screen and (max-width: 992px) {
+				top: 40%;
 			}
 
-			& > .couple-label {
-				padding: 20px;
-				position: absolute;
-				color: #FFF;
-				bottom: 0;
-				left: 0;
+			@media screen and (orientation: landscape) and (max-height: 560px) {
+				top: 40%;
+			}
+		}
+	}
 
-				& > * {
-					display: block;
-				}
+	.photo-title {
+		font: 700 2em sans-serif;
+		color: @photo-title-color;
 
-				.couple-which {
-					font: bold 1em 'Tw Cen Mt';
-					padding-bottom: 4px;
-					color: #CCC;
-				}
+		@media screen and (min-width: 992px) {
+			font-size: 3.2em;
+		}
+	}
 
-				.couple-name {
-					font-size: 200%;
-					line-height: 1em;
-					font-weight: 600;
-				}
+	.photo-grid {
+		position: relative;
+		margin: 10px 10%;
+		display: table;
+
+		@media screen and (min-width: 484px) {
+			margin: 10px 20%;
+		}
+
+		.photo-grid-img {
+			position: relative;
+			width: 100% / 7;
+			display: table-cell;
+			padding: 0.5%;
+		}
+	}
+
+	.photo-gallery-btn:extend(.base-button) {
+		margin: 30px auto;
+		display: table;
+		padding: 12px 60px;
+		font: 600 100% sans-serif;
+	}
+
+}
+
+#about-couple-section {
+
+	background: #fff;
+
+	@media screen and (min-width: 992px) {
+
+		border-top: 1px solid @base-border-color;
+		border-bottom: 1px solid @base-border-color;
+
+		.couple-row:extend(.cover-box) {}
+
+	}
+
+	.couple-cell {
+
+		padding: 50px 15% 65px;
+		border-bottom: 1px solid @base-border-color;
+
+		@media screen and (min-width: 640px) {
+			padding-left: 22.5%;
+			padding-right: 22.5%;
+		}
+
+		@media screen and (min-width: 992px) {
+			padding: 50px 80px;
+			height: 50%;
+		}
+
+		&:last-child {
+			@media screen and (min-width: 992px) {
+				border-bottom: none;
 			}
 		}
 
-		& > .view-profile-btn {
-			padding: 10px 15px;
-			font-weight: 600;
-			margin: 15px 20px;
-			display: block;
-			background: none;
-			box-shadow: none;
-			outline: none;
-			color: lighten(#9BC, 20%);
-			border: 2px solid #9BC;
-			font-size: 95%;
-			transition: all 0.4s ease-out;
+		&.groom-box {
+			.couple-box(groom);
+		}
 
-			&:hover {
-				color: lighten(#9BC, 60%);
-				border: 2px solid lighten(#9BC, 30%);
+		&.bride-box {
+			.couple-box(bride);
+		}
+	}
+}
+
+#story-board {
+
+	>.row {
+
+		background: lighten(@hero-background, 5%);
+
+		@media screen and (min-width: 992px) {
+			background: @hero-background url("/assets/img/story-board-background.jpg") no-repeat left center;
+			background-size: cover;
+		}
+
+		@media screen and (max-width: 992px) {
+			.story-title-container {
+				margin: 0;
+				width: 100%;
+				background: @hero-background url("/assets/img/story-board-background.jpg") no-repeat left center;
+				background-size: cover;
 			}
 		}
 
-		&.couple-box-right {
-			& > .photo-cover {
-				& > .couple-label {
-					left: auto;
-					right: 0;
+		>* {
+			display: table;
+			position: relative;
+			min-height: 180px;
+			margin-bottom: 50px !important;
 
-					& > * {
-						text-align: right;
-					}
-				}
-			}
-
-			& > .view-profile-btn {
-				float: right;
+			@media screen and (min-width: 992px) {
+				height: 560px;
+				padding: 80px 0;
+				margin-bottom: 0 !important;
 			}
 		}
+	}
+
+	.story-title, .story-container {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.story-title {
+		color: @story-title-color;
+		font: 100 3.2em sans-serif;
+	}
+
+	.story-pg {
+        color: lighten(@event-dark-color, 20%);
+		text-align-last: left;
+		font: 300 80%/1.3em sans-serif;
+		padding-top: 30px;
+
+		&:last-of-type {
+			padding-bottom: 30px;
+		}
+	}
+
+	@media screen and (min-width: 992px) {
+
+		.story-title {
+			font-size: 4.5em;
+		}
+
+		.story-pg {
+			font-size: 92.5%;
+			line-height: 1.5em;
+			color: darken(@story-text-color, 20%);
+			padding-bottom: 0 !important;
+
+			&:first-of-type {
+				padding-top: 0;
+			}
+		}
+
 	}
 }

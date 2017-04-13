@@ -1,0 +1,131 @@
+.cover-box {
+    position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+    height: 100%;
+}
+
+.base-button {
+    color: @button-text-color;
+    background: @button-background;
+    position: relative;
+    border-radius: 5px;
+}
+
+.edge-row() {
+    margin-left: 0;
+    margin-right: 0;
+
+    >* {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.couple-box(@couple) {
+
+    .couple-box-props() when (@couple = groom) {
+        @couple-color: @groom-color;
+    }
+
+    .couple-box-props() when (@couple = bride) {
+        @couple-color: @bride-color;
+    }
+
+    .couple-box-props();
+
+    .couple-avatar {
+
+        @avatar-offset-box-size: (@couple-avatar-size + 2 * @couple-avatar-offset);
+
+        @media screen and (min-width: 992px) {
+
+            position: absolute;
+            left: -(@avatar-offset-box-size / 2);
+
+            &::before, &::after {
+                content: '';
+                display: block;
+                background: #fff;
+                position: absolute;
+                top: -@couple-avatar-offset;
+                height: @avatar-offset-box-size;
+            }
+
+            &::before {
+                width: @avatar-offset-box-size;
+                border-radius: 100%;
+                border: 1px solid @base-border-color;
+            }
+
+            &::after {
+                left: @avatar-offset-box-size / 2;
+                width: @avatar-offset-box-size / 2;
+                z-index: 10;
+            }
+
+        }
+
+
+        >img.img-avatar {
+
+            width: @couple-avatar-size;
+            height: @couple-avatar-size;
+            border-radius: 100%;
+
+            display: table;
+            margin: 0 auto 10px;
+
+            @media screen and (min-width: 992px) {
+                position: absolute;
+                left: @couple-avatar-offset;
+                z-index: 100;
+            }
+
+        }
+    }
+
+    .couple-name {
+        color: darken(@couple-color, 5%);
+        font-size: 1.8em;
+        text-align: center;
+    }
+
+    .couple-label {
+        background: @couple-color;
+        color: #fff;
+        font: 900 0.875em sans-serif;
+        display: table;
+        margin: 5px auto;
+        padding: 7px 10px;
+    }
+
+    p.about-couple {
+        text-align: justify;
+        text-align-last: left;
+        margin-top: 30px;
+        font: 100 80%/1.3em sans-serif;
+        color: lighten(@event-dark-color, 10%);
+    }
+
+    @media screen and (min-width: 992px) {
+
+        .couple-name {
+            text-align: left;
+            font-size: 2em;
+        }
+
+        .couple-label {
+            display: inline-block;
+            padding: 7px 10px;
+        }
+
+        p.about-couple {
+            font-size: 87.5%;
+            line-height: 1.4em;
+        }
+
+    }
+
+}

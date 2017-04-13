@@ -9,18 +9,21 @@
         <meta name="description" content="Wedding arrangements for the wedding between Fortune Chinda and Blessing Peter in March 2017.">
         <meta name="keywords" content="Fortune, Blessing, wedding, weds, fortunewedsblessing">
         <meta name="author" content="Glad Chinda <gladxeqs@gmail.com>">
-        
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="/favicon.ico" type="image/x-icon">
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico" rel="stylesheet">
+
+        <!-- Mordernizr.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
         <!-- Stylesheets -->
         <link rel="stylesheet" href="/assets/css/vendor.css">
         <link rel="stylesheet" href="/assets/css/app.css">
 
-        <!-- Mordernizr.js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
         @section('head-metadata')
         @show
