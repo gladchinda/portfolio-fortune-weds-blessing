@@ -129,3 +129,55 @@
     }
 
 }
+
+.event-color-mixin(@event-color) {
+
+    .event-color-props() when (@event-color = wine) {
+        @event-color: @wine-color;
+    }
+
+    .event-color-props() when (@event-color = cream) {
+        @event-color: @cream-color;
+    }
+
+    .event-color-props() when (@event-color = teal) {
+        @event-color: @teal-color;
+    }
+
+    .event-color-props() when (@event-color = peach) {
+        @event-color: @peach-color;
+    }
+
+    .event-color-props();
+
+    &.event-color {
+
+        .color-outer {
+            border: 1px solid @event-color-border;
+            border-radius: 100%;
+            width: @event-color-size;
+            height: @event-color-size;
+            margin: 20px auto;
+            position: relative;
+            top: 10px;
+        }
+
+        .color-inner:extend(.cover-box) {
+
+            @dark-event-color: darken(@event-color, 25%);
+
+            margin: @event-color-offset;
+            right: 0;
+            bottom: 0;
+            width: auto;
+            height: auto;
+            background: @event-color;
+            background: -moz-radial-gradient(circle at 2.5% 2.5%, @event-color, darken(@event-color, 5%), darken(@event-color, 15%));
+            background: radial-gradient(circle at 2.5% 2.5%, @event-color, darken(@event-color, 5%), darken(@event-color, 15%));
+            border-radius: 100%;
+            -moz-box-shadow: inset 0 0 3px 1px rgba(red(@dark-event-color), green(@dark-event-color), blue(@dark-event-color), 0.25);
+            -webkit-box-shadow: inset 0 0 3px 1px rgba(red(@dark-event-color), green(@dark-event-color), blue(@dark-event-color), 0.25);
+            box-shadow: inset 0 0 3px 1px rgba(red(@dark-event-color), green(@dark-event-color), blue(@dark-event-color), 0.25);
+        }
+    }
+}
