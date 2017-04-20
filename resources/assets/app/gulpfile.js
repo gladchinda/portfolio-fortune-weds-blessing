@@ -83,7 +83,18 @@ gulp.task('libs-js', () => {
 });
 
 // Create app.js file
-gulp.task('build-js', () => {});
+gulp.task('build-js', () => {
+
+	return gulp.src(ASSETS_PATH + '/js/app.js')
+		.pipe(sourcemaps.init({
+			loadMaps: true,
+			largeFile: true,
+		}))
+		.pipe(uglify())
+		.pipe(sourcemaps.write('.'))
+		.pipe(gulp.dest(BUILD_PATH + '/js'));
+
+});
 
 gulp.task('js', ['libs-js', 'build-js']);
 
@@ -91,6 +102,7 @@ gulp.task('build', ['css', 'js']);
 
 gulp.task('watch', () => {
 	gulp.watch(ASSETS_PATH + '/less/**/*.less', ['build-css']);
+	gulp.watch(ASSETS_PATH + '/js/app.js', ['build-js']);
 });
 
 gulp.task('default', ['build']);

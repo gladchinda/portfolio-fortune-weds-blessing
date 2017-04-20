@@ -11,10 +11,11 @@
         <meta name="author" content="Glad Chinda <gladxeqs@gmail.com>">
 
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Roboto:100,300,400,500,700,900" rel="stylesheet">
 
         <!-- Mordernizr.js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- Stylesheets -->
         <link rel="stylesheet" href="/assets/css/vendor.css">
@@ -37,7 +38,7 @@
         <!-- Google Analytics -->
         <!-- <script src="https://www.google-analytics.com/analytics.js" async defer></script> -->
     </head>
-    <body ng-app="main-app">
+    <body ng-app="fb">
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <!-- <script>
             window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;

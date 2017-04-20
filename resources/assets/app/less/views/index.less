@@ -6,6 +6,10 @@
 	-moz-osx-font-smoothing: greyscale;
 }
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 #couple-section {
 
 	padding: 0;
@@ -79,11 +83,11 @@
 	}
 
 	.photo-title {
-		font: 700 2em sans-serif;
+		font: 900 2.25em 'Open Sans', sans-serif;
 		color: @photo-title-color;
 
 		@media screen and (min-width: 992px) {
-			font-size: 3.2em;
+			font-size: 3.6em;
 		}
 	}
 
@@ -108,7 +112,7 @@
 		margin: 30px auto;
 		display: table;
 		padding: 12px 60px;
-		font: 600 100% sans-serif;
+		font: 700 110% 'Open Sans', sans-serif;
 	}
 
 }
@@ -142,6 +146,10 @@
 			height: 50%;
 		}
 
+		@media screen and (min-width: 992px) and (max-width: 1156px) {
+			font-size: 90%;
+		}
+
 		&:last-child {
 			@media screen and (min-width: 992px) {
 				top: 50%;
@@ -155,6 +163,10 @@
 
 		&.bride-box {
 			.couple-box(bride);
+		}
+
+		.couple-header {
+			position: relative;
 		}
 	}
 }
@@ -200,13 +212,13 @@
 
 	.story-title {
 		color: @story-title-color;
-		font: 100 3.2em sans-serif;
+		font: 100 4em 'Roboto', sans-serif;
 	}
 
 	.story-pg {
         color: lighten(@event-dark-color, 20%);
 		text-align-last: left;
-		font: 300 80%/1.3em sans-serif;
+		font: 400 90%/1.75em 'Open Sans', sans-serif;
 		padding-top: 30px;
 
 		&:last-of-type {
@@ -217,12 +229,13 @@
 	@media screen and (min-width: 992px) {
 
 		.story-title {
-			font-size: 4.5em;
+			font-size: 6em;
+			bottom: 30px;
+			position: relative;
 		}
 
 		.story-pg {
-			font-size: 92.5%;
-			line-height: 1.5em;
+			font: 300 96%/1.6em 'Roboto', sans-serif;
 			color: darken(@story-text-color, 20%);
 			padding-bottom: 0 !important;
 
@@ -255,7 +268,7 @@
 			.event-title {
 				padding: 50px 0;
 				color: @event-light-color;
-				font: 100 2.5em sans-serif;
+				font: 300 2.5em 'Roboto', sans-serif;
 			}
 		}
 
@@ -272,7 +285,7 @@
 
 				.event-date {
 					font-size: 1em;
-					padding: 42px 0;
+					padding: 30px 0;
 				}
 			}
 
@@ -280,14 +293,14 @@
 				font-size: 4.5em;
 
 				.event-date {
-					padding: 30px 0;
+					padding: 16px 0;
 				}
 			}
 
-			@media screen and (min-width: 992px) and (max-width: 1136px) {
+			@media screen and (min-width: 992px) and (max-width: 1156px) {
 				.event-date {
 					font-size: 0.8em;
-					padding: 45px 0;
+					padding: 32px 0;
 				}
 			}
 		}
@@ -295,7 +308,7 @@
 		.event-date {
 			color: @event-dark-color;
 			text-align: center;
-			padding: 56px 0;
+			padding: 45px 0;
 			font-size: 0.8em;
 
 			>* {
@@ -303,7 +316,7 @@
 			}
 
 			.event-day {
-				font: 600 2em sans-serif;
+				font: 800 2em 'Open Sans', sans-serif;
 				vertical-align: middle;
 			}
 
@@ -313,7 +326,7 @@
 
 			.event-month, .event-year {
 				display: block;
-				font: 100 0.4em sans-serif;
+				font: 600 0.4em 'Open Sans', sans-serif;
 				position: relative;
 				top: -5px;
 			}
@@ -336,13 +349,12 @@
 			.colours-text {
 				display: block;
 				padding: 20px 50px;
-				font: 600 0.325em sans-serif;
+				font: 700 0.325em 'Roboto', sans-serif;
 				border-bottom: 1px solid @base-border-color;
 			}
 
 			.color-label {
-				font-weight: 100;
-				font-size: 0.325em;
+				font: 400 0.325em 'Open Sans', sans-serif;
 			}
 
 			.event-color-box {
@@ -387,7 +399,7 @@
 		.event-label {
 			.label-text {
 				color: lighten(@event-dark-color, 7.5%);
-				font: 900 1em/1.125em sans-serif;
+				font: 900 1em/1.125em 'Open Sans', sans-serif;
 			}
 		}
 
@@ -397,13 +409,13 @@
 
 			.location-place {
 				margin-top: 15px;
-				font: 300 1.25em sans-serif;
+				font: 400 1.25em 'Roboto', sans-serif;
 				color: @event-dark-color;
 			}
 
 			.location-place-address {
 				margin-top: 3px;
-				font: 100 1em sans-serif;
+				font: 300 1em 'Roboto', sans-serif;
 				color: @event-light-color;
 			}
 		}
@@ -415,6 +427,7 @@
 			margin: 0 auto;
 			top: -3px;
 			border-radius: @map-button-size;
+			color: #fff;
 		}
 
 		@media screen and (min-width: 992px) {
@@ -459,7 +472,7 @@
 		color: @attending-text-color;
 		padding: 12px 50px;
 		margin: 0 auto 30px;
-		font: 300 2.2em sans-serif;
+		font: 400 2.2em 'Roboto', sans-serif;
 	}
 
 	.attending-choice {
@@ -481,6 +494,7 @@
 			display: table-cell;
 			width: 90% / 3;
 			text-align: center;
+			transition: all 0.6s ease-out;
 
 			&.has-focus, &.active {
 				color: @light-attending-color;
@@ -513,6 +527,7 @@
 			border: 2px solid @dark-attending-color;
 			border-radius: @choice-checker-size;
 			cursor: pointer;
+			transition: all 0.6s ease-out;
 
 			.choice-active-checker:extend(.cover-box) {
 				right: 0;
@@ -527,7 +542,7 @@
 
 		.choice-label {
 			display: block;
-			font: 300 1.5em sans-serif;
+			font: 400 1.5em 'Roboto', sans-serif;
 			position: relative;
 			top: 10px;
 			cursor: pointer;
@@ -539,7 +554,7 @@
 
 		.main-counter {
 			display: block;
-			font: 100 9em/0.975em sans-serif;
+			font: 300 9em/0.975em 'Roboto', sans-serif;
 			position: relative;
 			text-align: center;
 			margin: 100px 0 0;
@@ -562,7 +577,7 @@
 			border-bottom: 1px solid @attending-text-bg;
 			text-align: center;
 			padding: 2px 10px;
-			font: 100 1.05em sans-serif;
+			font: 400 1.05em 'Roboto', sans-serif;
 			margin: 0 auto;
 		}
 	}

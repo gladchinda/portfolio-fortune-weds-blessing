@@ -34,42 +34,14 @@
                 </div>
             </div>
         </div>
-        <div id="about-couple-section" class="col-md-5">
+        <div id="about-couple-section" class="col-md-5" ng-controller="fbCoupleController">
             <div class="couple-row row">
-                <div class="couple-cell groom-box col-md-12">
-                    <div class="couple-header">
-                        <div class="couple-avatar">
-                            <img src="/assets/img/groom-avatar.jpg" class="img-avatar" alt="Groom Photo">
-                        </div>
-                        <div class="couple-name">Fortune Chinda</div>
-                        <div class="couple-label text-uppercase text-center">Groom</div>
-                        <div class="couple-connect">
-                            <a href="#" title="Follow on Facebook"><span class="fb-icon"></span></a>
-                            <a href="#" title="Follow on Twitter"><span class="tw-icon"></span></a>
-                            <a href="#" title="Follow on Instagram"><span class="ig-icon"></span></a>
-                        </div>
-                    </div>
-                    <p class="about-couple">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </div>
-                <div class="couple-cell bride-box col-md-12">
-                    <div class="couple-header">
-                        <div class="couple-avatar">
-                            <img src="/assets/img/bride-avatar.jpg" class="img-avatar" alt="Bride Photo">
-                        </div>
-                        <div class="couple-name">Blessing Peter</div>
-                        <div class="couple-label text-uppercase text-center">Bride</div>
-                        <div class="couple-connect">
-                            <a href="#" title="Follow on Facebook"><span class="fb-icon"></span></a>
-                            <a href="#" title="Follow on Twitter"><span class="tw-icon"></span></a>
-                            <a href="#" title="Follow on Instagram"><span class="ig-icon"></span></a>
-                        </div>
-                    </div>
-                    <p class="about-couple">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </div>
+                <fb-couple-profile couple-who="couple.groom" ng-cloak>
+                    <strong>Fortune Chinda</strong>, also known as <strong>(Phortunez)</strong>, is a young gentleman from Rivers State, Nigeria. He is an artist, author, idea and brand expert, design engineer and planner, dynamic songwriter, music instructor, and teens coach. He is the <strong>CEO/Creative Director</strong> of Innovation House Company. He is also a <strong>Team Leader</strong> at Mould The Young Foundation, and a <strong>Recording Artist</strong> at Phortunez &amp; GospelMix Family.
+                </fb-couple-profile>
+                <fb-couple-profile couple-who="couple.bride" ng-cloak>
+                    <strong>Blessing Peter</strong> is a young lady with a great personality. She hails from Edo State, Nigeria. She is passionate about inspiring the younger ones; keeping them in perspective and moving their lives in a positive direction. She is a biochemist, strategist, professional hair stylist, make-up artist, young people's coach, and amazing writer. She is the <strong>Creative Director</strong> of Blizz Beautified Hair Styling, Braiding &amp; Make-Up Finery, and also a <strong>Project Assistant</strong> at Innovation House Company &amp; Mould The Young Foundation.
+                </fb-couple-profile>
             </div>
         </div>
     </div>

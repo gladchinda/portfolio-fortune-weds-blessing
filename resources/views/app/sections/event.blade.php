@@ -77,7 +77,7 @@
                 <div class="label-text text-uppercase text-center">Traditional Marriage</div>
             </div>
             <div class="location-map-button col-md-2 hidden-xs hidden-sm">
-                <button class="map-button btn btn-lg"><span class="map-btn-icon"></span></button>
+                <button class="map-button btn btn-lg"><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></button>
             </div>
             <div class="location-address col-md-8 col-xs-12">
                 <div class="location-place">No. 5 Idumoza Street, Iruekpen</div>
@@ -89,7 +89,7 @@
                 <div class="label-text text-uppercase text-center">White Wedding</div>
             </div>
             <div class="location-map-button col-md-2 hidden-xs hidden-sm">
-                <button class="map-button btn btn-lg"><span class="map-btn-icon"></span></button>
+                <button class="map-button btn btn-lg"><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></button>
             </div>
             <div class="location-address col-md-8 col-xs-12">
                 <div class="location-place">RCCG, Glory House Parish, Rivers Province 3, PHC</div>
@@ -101,7 +101,7 @@
                 <div class="label-text text-uppercase text-center">Wedding Reception</div>
             </div>
             <div class="location-map-button col-md-2 hidden-xs hidden-sm">
-                <button class="map-button btn btn-lg"><span class="map-btn-icon"></span></button>
+                <button class="map-button btn btn-lg"><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></button>
             </div>
             <div class="location-address col-md-8 col-xs-12">
                 <div class="location-place">PN Events Place (former Pend Motels)</div>

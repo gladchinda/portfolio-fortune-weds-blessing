@@ -42,7 +42,7 @@
         @media screen and (min-width: 992px) {
 
             position: absolute;
-            left: -(@avatar-offset-box-size / 2);
+            left: -(@avatar-offset-box-size + 24);
 
             &::before, &::after {
                 content: '';
@@ -88,14 +88,14 @@
 
     .couple-name {
         color: darken(@couple-color, 5%);
-        font-size: 1.8em;
         text-align: center;
+        font: 300 1.8em 'Roboto', sans-serif;
     }
 
     .couple-label {
         background: @couple-color;
         color: #fff;
-        font: 900 0.875em sans-serif;
+        font: 900 0.875em 'Open Sans', sans-serif;
         display: table;
         margin: 5px auto;
         padding: 7px 10px;
@@ -105,8 +105,41 @@
         text-align: justify;
         text-align-last: left;
         margin-top: 30px;
-        font: 100 80%/1.3em sans-serif;
-        color: lighten(@event-dark-color, 10%);
+        font: 400 90%/1.5em 'Open Sans', sans-serif;
+        color: saturate(@event-dark-color, 10%);
+    }
+
+    .couple-connect {
+
+        position: relative;
+        text-align: center;
+
+        @media screen and (min-width: 992px) {
+            position: absolute;
+            top: 10px;
+            right: -10px;
+        }
+
+        .fa {
+            color: lighten(@social-icons-disabled-color, 7.5%);
+            padding: 0 2px;
+
+            &:hover {
+
+                &.fb-icon {
+                    color: @social-icons-facebook-color;
+                }
+
+                &.tw-icon {
+                    color: @social-icons-twitter-color;
+                }
+
+                &.ig-icon {
+                    color: @social-icons-instagram-color;
+                }
+
+            }
+        }
     }
 
     @media screen and (min-width: 992px) {
@@ -122,8 +155,8 @@
         }
 
         p.about-couple {
-            font-size: 87.5%;
-            line-height: 1.4em;
+            font-size: 90%;
+            line-height: 1.5em;
         }
 
     }
