@@ -1,6 +1,26 @@
 (function($, angular) {
 
-    angular.module('app.filters', [])
+    angular.module('fb.app', [])
+
+        .constant('baseUrl', "/services/http/rest/json/")
+
+        .factory('httpDataLoader', ['$http', 'baseUrl', function($http, baseUrl) {
+
+            var loadData = function(endpoint, scope, key) {
+                $http({
+                    method: 'GET',
+                    url: baseUrl + endpoint,
+                    cache: true,
+                }).then(function(response) {
+                    scope[key] = response.data;
+                });
+            };
+
+            return {
+                loadData: loadData,
+            };
+
+        }])
 
         .filter('initialCaps', function() {
 
@@ -83,31 +103,12 @@
             };
         }]);
 
-    angular.module('fb.couple', [])
+    angular.module('fb.couple', ['fb.app'])
 
-        .controller('fbCoupleController', ['$scope', function($scope) {
-            $scope.couple = {
-                'groom': {
-                    'name': 'Fortune Chinda',
-                    'who': 'groom',
-                    'avatar': '/assets/img/groom-avatar.jpg',
-                    'social': {
-                        'facebook': '#',
-                        'twitter': '#',
-                        'instagram': '#',
-                    }
-                },
-                'bride': {
-                    'name': 'Blessing Peter',
-                    'who': 'bride',
-                    'avatar': '/assets/img/bride-avatar.jpg',
-                    'social': {
-                        'facebook': '#',
-                        'twitter': '#',
-                        'instagram': '#',
-                    }
-                },
-            };
+        .controller('fbCoupleController', ['$scope', 'httpDataLoader', function($scope, httpDataLoader) {
+
+            httpDataLoader.loadData('couple', $scope, 'couple');
+
         }])
 
         .directive('fbCoupleProfile', function() {
@@ -118,11 +119,58 @@
                     'person': "=coupleWho",
                 },
                 templateUrl: '/assets/js/templates/couple-profile.html',
+            };
+        });
+
+    angular.module('fb.events', ['fb.app'])
+
+        .controller('fbEventsController', ['$scope', 'httpDataLoader', function($scope, httpDataLoader) {
+
+            httpDataLoader.loadData('events', $scope, 'events');
+
+        }])
+
+        .directive('fbEventBoard', function() {
+            return {
+                restrict: 'AE',
+                replace: true,
+                scope: {
+                    'event': "=eventType",
+                },
+                templateUrl: '/assets/js/templates/events.html',
+            };
+        })
+
+        .directive('fbEventColor', function() {
+            return {
+                restrict: 'AE',
+                replace: true,
+                scope: true,
+                templateUrl: '/assets/js/templates/event-color.html',
                 transclude: true,
             };
         });
 
-    angular.module('fb', ['app.filters', 'fb.couple', 'fb.attending']);
+    angular.module('fb.locations', ['fb.app'])
+
+        .controller('fbLocationsController', ['$scope', 'httpDataLoader', function($scope, httpDataLoader) {
+
+            httpDataLoader.loadData('locations', $scope, 'locations');
+
+        }])
+
+        .directive('fbEventLocation', function() {
+            return {
+                restrict: 'AE',
+                replace: true,
+                scope: true,
+                templateUrl: '/assets/js/templates/locations.html',
+            };
+        });
+
+    angular.module('fb.photos', []);
+
+    angular.module('fb', ['ngSanitize', 'fb.app', 'fb.couple', 'fb.attending', 'fb.events', 'fb.locations', 'fb.photos']);
 
     $(function app() {});
 

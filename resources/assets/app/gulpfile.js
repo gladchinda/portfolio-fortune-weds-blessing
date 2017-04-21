@@ -69,6 +69,7 @@ gulp.task('libs-js', () => {
 		BOWER_PATH + '/jquery/dist/jquery.min.js',
 		BOOTSTRAP + '/js/bootstrap.min.js',
 		BOWER_PATH + '/angular/angular.min.js',
+		BOWER_PATH + '/angular-sanitize/angular-sanitize.min.js',
 	];
 
 	return gulp.src(libs)

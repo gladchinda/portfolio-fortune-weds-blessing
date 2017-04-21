@@ -421,6 +421,9 @@
 		}
 
 		.map-button:extend(.base-button) {
+
+			@button-background-dark: darken(@button-background, 35%);
+
 			width: @map-button-size;
 			height: @map-button-size;
 			display: block;
@@ -428,6 +431,10 @@
 			top: -3px;
 			border-radius: @map-button-size;
 			color: #fff;
+			font-size: 150%;
+            -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+            -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
 		}
 
 		@media screen and (min-width: 992px) {
