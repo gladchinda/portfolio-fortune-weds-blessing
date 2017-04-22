@@ -11,4 +11,5 @@
     @include('app.sections.storyboard')
     @include('app.sections.event')
     @include('app.sections.attending')
+    @include('app.sections.modals')
 @endsection

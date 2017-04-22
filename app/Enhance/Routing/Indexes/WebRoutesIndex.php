@@ -74,18 +74,21 @@ class WebRoutesIndex extends AbstractRoutesIndex
 	                    'place' => 'No. 5 Idumoza Street, Iruekpen',
 	                    'address' => 'Ekpoma, Edo State',
 	                    'mapUrl' => "https://goo.gl/maps/4Qjp4pCtePR2",
+	                    'mapEmbedUrl' => 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15848.217429451253!2d6.0405583!3d6.763227!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1046eb22fd98ec41%3A0xcd1e34aec0816ad7!2sIruekpen%2C+Ekpoma!5e0!3m2!1sen!2sng!4v1492890211758',
 		            ],
 	                [
 						'event' => 'White Wedding',
 	                    'place' => 'RCCG, Glory House Parish, Rivers Province 3, PHC',
 	                    'address' => 'Plot 8, Okworo, Standard Road, Elelenwo, Port Harcourt',
 	                    'mapUrl' => "https://goo.gl/maps/5Anwhp2xL1v",
+	                    'mapEmbedUrl' => 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15902.42288885766!2d7.0615335!3d4.837565!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb572899d6dbd43e!2sThe+Redeemed+Christian+Church+of+God!5e0!3m2!1sen!2sng!4v1492890677855',
 	                ],
 	                [
 						'event' => 'Wedding Reception',
 	                    'place' => 'PN Events Place (former Pend Motels)',
 	                    'address' => 'No. 54 - 56 Old Refinery Road, Elelenwo, PHC',
-	                    'mapUrl' => "https://goo.gl/maps/C1hrSEbVpfx",
+	                    'mapUrl' => "https://goo.gl/maps/dpR7zr3c1DU2",
+	                    'mapEmbedUrl' => 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15902.235171059207!2d7.056174!3d4.8455499!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x171e62b6a581943!2sPN+Events+Place!5e0!3m2!1sen!2s!4v1492891142845',
 	                ],
 				];
 

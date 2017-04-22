@@ -1,0 +1,55 @@
+@import (reference) "../variables";
+@import (reference) "../mixins";
+
+#app-modals-container:extend(.cover-box) {
+
+    .row {
+        .edge-row;
+    }
+
+    .modal {
+        .base-modal;
+    }
+
+    #map-view-modal.modal {
+
+        & > .modal-dialog.modal-cover {
+            // right: 0;
+            // width: 900px !important;
+            // margin: auto !important;
+        }
+
+        .loading-spinner:extend(.cover-box) {
+            display: table;
+
+            .loading-spinner-container:extend(.cover-box) {
+                display: table-cell;
+                position: relative;
+                vertical-align: middle;
+                text-align: center;
+                color: lighten(#000, 60%);
+                font-size: 2.5em;
+
+                .loading-text {
+                    display: block;
+                    text-align: center;
+
+                    &::after {
+                        content: attr(data-loading-text);
+                        font: 400 1em 'Roboto', sans-serif;
+                        position: relative;
+                        bottom: 30px;
+                    }
+                }
+
+                .fa.fa-3x {
+                    font-size: 3em;
+                }
+            }
+        }
+
+    }
+
+}
+
+#map-view-modal {}

@@ -172,6 +172,46 @@
 
     angular.module('fb', ['ngSanitize', 'fb.app', 'fb.couple', 'fb.attending', 'fb.events', 'fb.locations', 'fb.photos']);
 
-    $(function app() {});
+    $(function app() {
+
+        (function mapViewerController() {
+
+            var $modalElem = $('#map-view-modal'),
+                $modalContent = $modalElem.find('.modal-content'),
+                $loadingSpinner = $modalElem.find('.loading-spinner').first(),
+                $googMapFrame = $modalContent.find('iframe.goog-map-embed-frame').first();
+
+            $modalElem.on('shown.bs.modal', function(evt) {
+
+                var $mapEmbedUrl = $(evt.relatedTarget).data('place'),
+
+                    $googMapFrameAttributes = {
+                        height: $modalContent.height() - 5,
+                        width: $modalContent.width(),
+                        src: $mapEmbedUrl,
+                    };
+
+                $.each($googMapFrameAttributes, function(attr, val) {
+                    $googMapFrame.attr(attr, val);
+                });
+
+                $googMapFrame.on('load', function(evt) {
+                    $loadingSpinner.hide();
+                });
+
+            })
+
+            .on('show.bs.modal', function(evt) {
+                $loadingSpinner.show();
+            })
+
+            .on('hidden.bs.modal', function(evt) {
+                $googMapFrame.removeAttr('src');
+                $loadingSpinner.hide();
+            });;
+
+        })();
+
+    });
 
 })(jQuery, angular);
