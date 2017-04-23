@@ -1,0 +1,12 @@
+<div class="event-location row">
+    <div class="event-label col-md-2">
+        <div class="label-text text-uppercase text-center">{{location.event | initialCaps}}</div>
+    </div>
+    <div class="location-map-button col-md-2 hidden-xs hidden-sm">
+        <button class="map-button btn btn-lg" title="View Map" data-toggle="modal" data-target="#map-view-modal" data-place="{{location.mapEmbedUrl}}"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i></button>
+    </div>
+    <div class="location-address col-md-8 col-xs-12">
+        <div class="location-place">{{location.place}}</div>
+        <div class="location-place-address text-uppercase">{{location.address}}</div>
+    </div>
+</div>

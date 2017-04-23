@@ -1,0 +1,20 @@
+<div class="event-box event-{{event.code2}} col-md-6">
+    <div class="event-title-box text-center">
+        <div class="event-title"><span>{{event.label | initialCaps}}</span></div>
+    </div>
+    <div class="event-details row">
+        <div class="event-date col-xs-6">
+            <span class="event-day">{{event.date | date:"dd"}}</span>
+            <div class="more-date">
+                <span class="event-month text-uppercase text-center">{{event.date | date:"MMMM"}}</span>
+                <span class="event-year text-center">{{event.date | date:"yyyy"}}</span>
+            </div>
+        </div>
+        <div class="event-colors col-xs-6">
+            <div class="colours-text text-center text-uppercase">Colours</div>
+            <div class="row">
+                <fb-event-color ng-repeat="color in event.colors" ng-cloak>{{color}}</fb-event-color>
+            </div>
+        </div>
+    </div>
+</div>

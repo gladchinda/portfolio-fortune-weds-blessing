@@ -1,0 +1,15 @@
+<div class="couple-cell {{person.who}}-box col-md-12">
+    <div class="couple-header">
+        <div class="couple-avatar">
+            <img ng-src="{{person.avatar}}" class="img-avatar" alt="{{person.who | initialCaps}} Photo">
+        </div>
+        <div class="couple-name">{{person.name | initialCaps}}</div>
+        <div class="couple-label text-uppercase text-center">{{person.who | initialCaps}}</div>
+        <div class="couple-connect">
+            <a ng-href="{{person.social.facebook}}" title="Follow on Facebook" target="_blank"><i class="fb-icon fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
+            <a ng-href="{{person.social.twitter}}" title="Follow on Twitter" target="_blank"><i class="tw-icon fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+            <a ng-href="{{person.social.instagram}}" title="Follow on Instagram" target="_blank"><i class="ig-icon fa fa-instagram fa-lg" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <p class="about-couple" ng-bind-html="person.profile"></p>
+</div>
