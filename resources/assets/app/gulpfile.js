@@ -9,6 +9,7 @@ const uglify 		= require('gulp-uglify');
 const plumber 		= require('gulp-plumber');
 const sourcemaps 	= require('gulp-sourcemaps');
 const autoprefixer 	= require('gulp-autoprefixer');
+// const pump 			= require('pump');
 
 // Configure paths
 const APP_PATH 		= path.join(__dirname, '../../../');
@@ -24,6 +25,8 @@ gulp.task('vendor-css', () => {
 	const vendors = [
 		BOOTSTRAP + '/css/bootstrap.min.css',
 		BOOTSTRAP + '/css/bootstrap-theme.min.css',
+		ASSETS_PATH + '/css/blueimp-gallery.min.css',
+		BOWER_PATH + '/perfect-scrollbar/css/perfect-scrollbar.min.css',
 	];
 
 	return gulp.src(vendors)
@@ -70,6 +73,8 @@ gulp.task('libs-js', () => {
 		BOOTSTRAP + '/js/bootstrap.min.js',
 		BOWER_PATH + '/angular/angular.min.js',
 		BOWER_PATH + '/angular-sanitize/angular-sanitize.min.js',
+		ASSETS_PATH + '/js/jquery.blueimp-gallery.min.js',
+		BOWER_PATH + '/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js',
 	];
 
 	return gulp.src(libs)
@@ -92,6 +97,7 @@ gulp.task('build-js', () => {
 			largeFile: true,
 		}))
 		.pipe(uglify())
+    	.on('error', function (err) { gutils.log(gutils.colors.red('[Error]'), err.toString()); })
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(BUILD_PATH + '/js'));
 

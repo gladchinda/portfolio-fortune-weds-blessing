@@ -10,6 +10,8 @@
   "dependencies": {
     "angular": "^1.6.1",
     "bootstrap": "^3.3.7",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "angular-sanitize": "^1.6.4",
+    "perfect-scrollbar": "^0.6.16"
   }
 }

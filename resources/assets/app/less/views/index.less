@@ -60,7 +60,7 @@
 	}
 
 	.row:extend(.cover-box) {
-		background: transparent url("/assets/img/photo-section-transparent-bg.png") no-repeat center;
+		background: transparent url(@photo-transparent-background-url) no-repeat center;
 		background-size: cover;
 	}
 
@@ -178,7 +178,7 @@
 		background: lighten(@hero-background, 5%);
 
 		@media screen and (min-width: 992px) {
-			background: @hero-background url("/assets/img/story-board-background.jpg") no-repeat left center;
+			background: @hero-background url(@storyboard-background-url) no-repeat left center;
 			background-size: cover;
 		}
 
@@ -186,7 +186,7 @@
 			.story-title-container {
 				margin: 0;
 				width: 100%;
-				background: @hero-background url("/assets/img/story-board-background.jpg") no-repeat left center;
+				background: @hero-background url(@storyboard-background-url) no-repeat left center;
 				background-size: cover;
 			}
 		}

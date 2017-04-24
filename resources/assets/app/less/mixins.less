@@ -69,12 +69,12 @@ iframe {
     .modal-close-x.close:extend(.base-button) {
         display: inline-block;
         text-align: center;
-        font: 100 3.6em/@modal-x-button-size 'Open Sans', sans-serif;
+        font: 100 3.6em/(@modal-x-button-size * 0.75) 'Open Sans', sans-serif;
         position: absolute;
-        top: @modal-x-button-margin;
-        right: @modal-x-button-margin * 1.25;
-        width: @modal-x-button-size;
-        height: @modal-x-button-size;
+        top: @modal-x-button-margin * 0.75;
+        right: @modal-x-button-margin * 1.25 * 0.75;
+        width: @modal-x-button-size * 0.75;
+        height: @modal-x-button-size * 0.75;
         border-radius: 100%;
         filter: alpha(opacity=100);
         opacity: 1;
@@ -84,14 +84,27 @@ iframe {
         &::after {
             content: attr(title);
             text-transform: uppercase;
-            font: 900 0.2em 'Roboto', sans-serif;
+            font: 900 0.5em 'Roboto', sans-serif;
             display: block;
             position: absolute;
             color: darken(@button-background, 20%);
             text-align: center;
-            margin-top: 12px;
+            margin-top: 24px;
             width: 100%;
             z-index: 999999;
+        }
+
+        @media screen and (min-width: 992px) {
+            font: 100 3.6em/@modal-x-button-size 'Open Sans', sans-serif;
+            top: @modal-x-button-margin;
+            right: @modal-x-button-margin * 1.25;
+            width: @modal-x-button-size;
+            height: @modal-x-button-size;
+
+            &::after {
+                font-size: 0.2em;
+                margin-top: 12px;
+            }
         }
     }
 

@@ -20,6 +20,8 @@ class FileStorage
 
     protected $url = null;
 
+    protected $filename = null;
+
     protected $uploaded = false;
 
     public function __construct(UploadedFile $file, $disk = 's3')
@@ -54,7 +56,7 @@ class FileStorage
 
         return sprintf("%s_%s.%s", $timestamp, $preserveFilename ? $filename : md5("{$filename}::{$timestamp}"), $extension);
     }
-    
+
     protected function uploadFile($saveIn, $preserveFilename = false, $public = true)
     {
         if ($this->isUploaded()) {
@@ -74,6 +76,7 @@ class FileStorage
         if ($uploaded) {
             $this->path = "{$saveIn}/{$saveAs}";
             $this->url = $disk->url($this->path);
+            $this->filename = $saveAs;
             $this->uploaded = true;
         }
 
@@ -99,6 +102,7 @@ class FileStorage
         if ($rollback) {
             $this->path = null;
             $this->url = null;
+            $this->filename = null;
             $this->uploaded = false;
         }
 
@@ -114,7 +118,7 @@ class FileStorage
 
     public function isUploaded()
     {
-        return !is_null($this->path) && !is_null($this->url) && $this->uploaded;
+        return !is_null($this->path) && !is_null($this->url) && !is_null($this->filename) && $this->uploaded;
     }
 
     public function getFile()
@@ -142,5 +146,11 @@ class FileStorage
     {
         $this->assertFileIsUploaded();
         return $this->url;
+    }
+
+    public function getStorageFilename()
+    {
+        $this->assertFileIsUploaded();
+        return $this->filename;
     }
 }

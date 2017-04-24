@@ -183,20 +183,30 @@
 
             $modalElem.on('shown.bs.modal', function(evt) {
 
-                var $mapEmbedUrl = $(evt.relatedTarget).data('place'),
+                var $mapEmbedUrl = $(evt.relatedTarget).data('place');
 
-                    $googMapFrameAttributes = {
+                function googMapFrameResolution() {
+
+                    var $googMapFrameAttributes = {
                         height: $modalContent.height() - 5,
                         width: $modalContent.width(),
-                        src: $mapEmbedUrl,
                     };
 
-                $.each($googMapFrameAttributes, function(attr, val) {
-                    $googMapFrame.attr(attr, val);
+                    $.each($googMapFrameAttributes, function(attr, val) {
+                        $googMapFrame.attr(attr, val);
+                    });
+
+                }
+
+                googMapFrameResolution();
+
+                $googMapFrame.prop('src', $mapEmbedUrl).on('load', function(evt) {
+                    $loadingSpinner.hide();
                 });
 
-                $googMapFrame.on('load', function(evt) {
-                    $loadingSpinner.hide();
+                $(window).on('resize', function(evt) {
+                    googMapFrameResolution();
+                    $modalElem.modal('handleUpdate');
                 });
 
             })
@@ -208,7 +218,79 @@
             .on('hidden.bs.modal', function(evt) {
                 $googMapFrame.removeAttr('src');
                 $loadingSpinner.hide();
-            });;
+            });
+
+        })();
+
+        (function loadGalleryPhotos() {
+
+            $.ajax({
+                url: '/services/http/rest/json/photos',
+            }).done(function (result) {
+
+                var $linksContainer = $('#blueimp-photo-links'),
+                    $baseUrl = 'https://s3.eu-west-2.amazonaws.com/fortunewedsblessing.com/images/uploads/',
+                    $photoGrid = $('#photos-section .photo-grid');
+
+                (function getRandomShowcasePhotos(length) {
+
+                    var length = length || 7,
+                        $randomPhotos = [];
+
+                    while ($randomPhotos.length < length) {
+                        $random = Math.floor( Math.random() * result.photos.length );
+                        ( $randomPhotos.indexOf($random) === -1 ) && $randomPhotos.push($random);
+                    }
+
+                    $randomPhotos = $randomPhotos.map(function(n) {
+                        return $baseUrl + 'thumbnails/' + result.photos[n];
+                    });
+
+                    $.each($randomPhotos, function(index, photo) {
+                        $photoGrid.append($('<div class="photo-grid-img"/>').append($('<img class="img-responsive">').prop('src', photo).attr('alt', 'Gallery sample photo')));
+                    });
+
+                })();
+
+                $.each(result.photos, function (index, photo) {
+
+                    $('<a/>')
+                        .append($('<img>').prop('src', $baseUrl + 'thumbnails/' + photo))
+                        .prop('href', $baseUrl + photo)
+                        .attr('data-gallery', '')
+                        .appendTo($linksContainer);
+
+                });
+
+            });
+
+        })();
+
+        (function photoGalleryController() {
+
+            var $modalElem = $('#photo-gallery-modal'),
+                $modalContent = $modalElem.find('.modal-content'),
+                $linksContainer = $('#blueimp-photo-links'),
+                $galleryContainer = $('#blueimp-gallery');
+
+            $modalElem.on('shown.bs.modal', function(evt) {
+
+                function photoGridResolution() {
+
+                    var $fullWidth = $modalContent.width(),
+                        $fullHeight = $modalContent.height();
+
+                    $linksContainer.css({'width': $fullWidth, 'height': $fullHeight * 0.5}).perfectScrollbar({maxScrollbarLength: $fullHeight * 0.2});
+
+                }
+
+                $(window).on('resize', function(evt) {
+                    photoGridResolution();
+                });
+
+                photoGridResolution();
+
+            });
 
         })();
 

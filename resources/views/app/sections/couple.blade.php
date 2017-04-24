@@ -3,12 +3,12 @@
         <div id="photos-section" class="col-md-7">
             <div class="row">
                 <div class="photo-icon col-xs-2 col-xs-offset-5">
-                    <img class="img-responsive" src="/assets/img/aperture.png" alt="Aperture icon">
+                    <img class="img-responsive" src="https://s3.eu-west-2.amazonaws.com/fortunewedsblessing.com/images/static/1492981678_8407d85e85f00e401cf7797959984250.png" alt="Aperture icon">
                 </div>
                 <div class="col-xs-12">
                     <div class="photo-title text-center text-uppercase">Photo Gallery</div>
                     <div class="photo-grid">
-                        <div class="photo-grid-img">
+                        <!-- <div class="photo-grid-img">
                             <img class="img-responsive" src="/assets/img/groom-avatar.jpg" alt="Aperture icon">
                         </div>
                         <div class="photo-grid-img">
@@ -28,9 +28,9 @@
                         </div>
                         <div class="photo-grid-img">
                             <img class="img-responsive" src="/assets/img/groom-avatar.jpg" alt="Aperture icon">
-                        </div>
+                        </div> -->
                     </div>
-                    <button class="text-uppercase btn btn-lg photo-gallery-btn">Photo Gallery</button>
+                    <button class="text-uppercase btn btn-lg photo-gallery-btn" data-toggle="modal" data-target="#photo-gallery-modal">Photo Gallery</button>
                 </div>
             </div>
         </div>
