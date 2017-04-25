@@ -65,6 +65,22 @@ class MainController extends Controller
         return $events;
     }
 
+	public function getCreditsData()
+	{
+		$credits = [
+			["label" => "iDea/Events", "owners" => "Innovation House"],
+			["label" => "Hairstyling | Make-Up Finery", "owners" => "BlizzBeautified"],
+			["label" => "Fashion", "owners" => "VenGerry Fashion&amp;Styles, Makky Effects, Zandyl Couture, BennieMax"],
+			["label" => "Foto/Videography", "owners" => "CrystalMedia"],
+			["label" => "Branded Tees", "owners" => "FooFoo&trade;, Innovation House"],
+			["label" => "Graphics", "owners" => "InterMedia Pro-X, 1106Medianigeria, iNDices, KCA Arts"],
+			["label" => "Catering | Confectioneries", "owners" => "Happy Catering Services"],
+			["label" => "Internet Media", "owners" => "ZyneDesk Inc, Innovation House"],
+		];
+
+		return $credits;
+	}
+
     public function getPhotosData()
     {
         $disk = Storage::disk('s3');

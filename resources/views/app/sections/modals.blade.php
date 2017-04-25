@@ -1,3 +1,12 @@
+<section id="credits-and-supports" class="container-fluid">
+    <div id="event-credits" class="row" ng-controller="fbCreditsController">
+        <div class="credit-title text-center text-uppercase">Credits</div>
+        <div class="credit-item col-md-4 col-sm-6" ng-repeat="credit in credits">
+            <div class="credit-label text-center">@{{ credit.label }}</div>
+            <div class="credit-owner text-center" ng-bind-html="credit.owners"></div>
+        </div>
+    </div>
+</section>
 <section id="app-modals-container" class="container-fluid">
     <div id="map-view-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="View Map">
         <div class="modal-dialog modal-cover" role="document">
@@ -33,7 +42,7 @@
                         <a class="play-pause"></a>
                         <ol class="indicator"></ol>
                     </div>
-                    
+
                     <div class="gallery-title">Photo Gallery</div>
                     <div id="blueimp-photo-links"></div>
                 </div>

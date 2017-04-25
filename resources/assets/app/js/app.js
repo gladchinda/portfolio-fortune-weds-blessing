@@ -168,9 +168,15 @@
             };
         });
 
-    angular.module('fb.photos', []);
+    angular.module('fb.credits', [])
 
-    angular.module('fb', ['ngSanitize', 'fb.app', 'fb.couple', 'fb.attending', 'fb.events', 'fb.locations', 'fb.photos']);
+        .controller('fbCreditsController', ['$scope', 'httpDataLoader', function($scope, httpDataLoader) {
+
+            httpDataLoader.loadData('credits', $scope, 'credits');
+
+        }]);
+
+    angular.module('fb', ['ngSanitize', 'fb.app', 'fb.couple', 'fb.attending', 'fb.events', 'fb.locations', 'fb.credits']);
 
     $(function app() {
 

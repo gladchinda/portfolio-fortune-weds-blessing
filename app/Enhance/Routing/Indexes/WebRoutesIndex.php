@@ -19,6 +19,7 @@ class WebRoutesIndex extends AbstractRoutesIndex
 			$R->get('/couple', 'MainController@getCoupleData');
 			$R->get('/events', 'MainController@getEventsData');
 			$R->get('/photos', 'MainController@getPhotosData');
+			$R->get('/credits', 'MainController@getCreditsData');
 			$R->get('/locations', 'MainController@getLocationsData');
 
 		});
