@@ -639,6 +639,7 @@
 #event-credits {
 
 	padding: 80px 10%;
+	position: relative;
 	background: saturate(darken(@groom-color, 40%), 30%);
 
 	@media screen and (min-width: 992px) {
@@ -667,6 +668,33 @@
 			font: 400 1.3em/1.35em 'Open Sans', sans-serif;
 			color: darken(#fff, 10%);
 			padding-bottom: 45px;
+		}
+
+	}
+
+	.web-designer {
+
+		color: @event-light-color;
+		font: 400 1.05em 'Open Sans', sans-serif;
+		padding: 30px;
+		margin-top: 50px;
+
+		img.designer-avatar {
+			border-radius: 100%;
+			width: 50px;
+			display: block;
+			margin: 12px auto;
+		}
+
+		a.designer-connect {
+			font-weight: 600;
+			color: desaturate(lighten(@button-background, 40%), 10%);
+			text-decoration: none !important;
+			transition: all 0.5s ease-out;
+
+			&:hover {
+				color: lighten(@button-background, 25%);
+			}
 		}
 
 	}

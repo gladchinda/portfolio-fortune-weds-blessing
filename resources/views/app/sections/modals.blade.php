@@ -11,6 +11,12 @@
             <div class="credit-label text-center">@{{ credit.label }}</div>
             <div class="credit-owner text-center" ng-bind-html="credit.owners"></div>
         </div>
+        <div class="web-designer col-md-12">
+            <div class="text-center">
+                <a href="https://twitter.com/gladchinda" title="Glad Chinda"><img src="https://pbs.twimg.com/profile_images/535575440274903041/yi5J5As4.jpeg" class="designer-avatar img-responsive"></a>
+                <span>Designed by <a href="https://twitter.com/gladchinda" class="designer-connect" title="Glad Chinda">@gladchinda</a></span>
+            </div>
+        </div>
     </div>
 </section>
 <section id="app-modals-container" class="container-fluid">
