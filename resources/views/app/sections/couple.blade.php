@@ -7,29 +7,7 @@
                 </div>
                 <div class="col-xs-12">
                     <div class="photo-title text-center text-uppercase">Photo Gallery</div>
-                    <div class="photo-grid">
-                        <!-- <div class="photo-grid-img">
-                            <img class="img-responsive" src="/assets/img/groom-avatar.jpg" alt="Aperture icon">
-                        </div>
-                        <div class="photo-grid-img">
-                            <img class="img-responsive" src="/assets/img/groom-avatar.jpg" alt="Aperture icon">
-                        </div>
-                        <div class="photo-grid-img">
-                            <img class="img-responsive" src="/assets/img/groom-avatar.jpg" alt="Aperture icon">
-                        </div>
-                        <div class="photo-grid-img">
-                            <img class="img-responsive" src="/assets/img/groom-avatar.jpg" alt="Aperture icon">
-                        </div>
-                        <div class="photo-grid-img">
-                            <img class="img-responsive" src="/assets/img/groom-avatar.jpg" alt="Aperture icon">
-                        </div>
-                        <div class="photo-grid-img">
-                            <img class="img-responsive" src="/assets/img/groom-avatar.jpg" alt="Aperture icon">
-                        </div>
-                        <div class="photo-grid-img">
-                            <img class="img-responsive" src="/assets/img/groom-avatar.jpg" alt="Aperture icon">
-                        </div> -->
-                    </div>
+                    <div class="photo-grid"></div>
                     <button class="text-uppercase btn btn-lg photo-gallery-btn" data-toggle="modal" data-target="#photo-gallery-modal">Photo Gallery</button>
                 </div>
             </div>

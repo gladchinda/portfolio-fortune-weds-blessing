@@ -33,7 +33,8 @@
                         <a class="play-pause"></a>
                         <ol class="indicator"></ol>
                     </div>
-
+                    
+                    <div class="gallery-title">Photo Gallery</div>
                     <div id="blueimp-photo-links"></div>
                 </div>
             </div>

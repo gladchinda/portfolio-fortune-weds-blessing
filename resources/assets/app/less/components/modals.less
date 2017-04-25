@@ -53,13 +53,32 @@
 }
 
 #photo-gallery-modal {
+
     .modal-body:extend(.cover-box) {}
+
+    .gallery-title {
+        display: block;
+        text-align: center;
+        position: relative;
+        top: 20%;
+        font: 100 3em 'Roboto', sans-serif;
+        color: darker(@groom-color, 15%);
+
+        @media screen and (min-width: 768px) {
+            font-size: 5em;
+            top: 15%;
+        }
+
+        @media screen and (min-width: 640px) and (orientation: landscape) {
+            top: 15%;
+        }
+    }
 }
 
 #blueimp-photo-links {
 
     position: absolute;
-    top: 0;
+    top: 15%;
     bottom: 0;
     left: 0;
     right: 0;
