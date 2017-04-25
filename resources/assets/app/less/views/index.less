@@ -639,14 +639,15 @@
 #event-credits {
 
 	padding: 80px 10%;
+	background: saturate(darken(@groom-color, 40%), 30%);
 
 	@media screen and (min-width: 992px) {
 		padding: 100px;
 	}
 
 	.credit-title {
-		font: 400 3.6em 'Open Sans', sans-serif;
-		color: saturate(darken(@groom-color, 20%), 10%);
+		font: 100 3.6em 'Roboto', sans-serif;
+		color: lighten(@groom-color, 30%);
 		padding-bottom: 70px;
 
 		@media screen and (min-width: 992px) {
@@ -659,12 +660,12 @@
 		.credit-label {
 			font: 700 1em/1.2em 'Open Sans', sans-serif;
 			padding-bottom: 10px;
-			color: lighten(@groom-color, 10%);
+			color: desaturate(lighten(@button-background, 40%), 10%);
 		}
 
 		.credit-owner {
-			font: 400 1.3em/1.35em 'Roboto', sans-serif;
-			color: desaturate(@attending-bg-color, 30%);
+			font: 400 1.3em/1.35em 'Open Sans', sans-serif;
+			color: darken(#fff, 10%);
 			padding-bottom: 45px;
 		}
 
