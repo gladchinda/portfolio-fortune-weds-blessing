@@ -27,7 +27,7 @@ class MainController extends Controller
                     'twitter' => 'https://twitter.com/gerachblings',
                     'instagram' => 'https://www.instagram.com/gerachblings/',
                 ],
-                'profile' => '<strong>Fortune Chinda</strong>, also known as <strong>(Phortunez)</strong>, is a young gentleman from Rivers State, south-south, Nigeria. He is a music artiste, dynamic songwriter/instructor, author, iDea/brand/innovation specialist, design engineer/planner, entertainment mgr/promoter, and a personality-development coach. He is the <strong>CEO/Creative Director</strong> of Innovation House Company. He is also a <strong>Team Leader</strong> at Mould The Young Foundation, and a <strong>Recording Artist</strong> at Phortunez &amp; GospelMix Family.',
+                'profile' => '<strong>Fortune Chinda</strong>, also known as <strong>(Phortunez)</strong>, is a young gentleman from Rivers State, south-south, Nigeria. He is a music artiste, dynamic songwriter and instructor, author, iDea,brand and innovation specialist, design engineer and planner, entertainment manager and promoter, and a personality-development coach. He is the <strong>CEO/Creative Director</strong> of Innovation House Company. He is also a <strong>Team Leader</strong> at Mould The Young Foundation, and a <strong>Recording Artist</strong> at Phortunez &amp; GospelMix Family.',
             ],
             'bride' => [
                 'name' => 'Blessing Peter',
@@ -68,14 +68,19 @@ class MainController extends Controller
 	public function getCreditsData()
 	{
 		$credits = [
-			["label" => "iDea/Events", "owners" => "Innovation House"],
-			["label" => "Hairstyling | Make-Up Finery", "owners" => "BlizzBeautified"],
-			["label" => "Fashion", "owners" => "VenGerry Fashion&amp;Styles, Makky Effects, Zandyl Couture, BennieMax"],
-			["label" => "Foto/Videography", "owners" => "CrystalMedia"],
-			["label" => "Branded Tees", "owners" => "FooFoo&trade;, Innovation House"],
-			["label" => "Graphics", "owners" => "InterMedia Pro-X, 1106Medianigeria, iNDices, KCA Arts"],
-			["label" => "Catering | Confectioneries", "owners" => "Happy Catering Services"],
-			["label" => "Internet Media", "owners" => "ZyneDesk Inc, Innovation House"],
+			'credits' => [
+				["label" => "iDea/Events", "owners" => "Innovation House"],
+				["label" => "Hairstyling | Make-Up Finery", "owners" => "BlizzBeautified"],
+				["label" => "Fashion", "owners" => "VenGerry Fashion &amp; Styles, Makky Effects, Zandyl Couture, BennieMax"],
+				["label" => "Foto/Videography", "owners" => "CrystalMedia"],
+				["label" => "Branded Tees", "owners" => "FooFoo&trade;, Innovation House"],
+				["label" => "Graphics", "owners" => "InterMedia Pro-X, 1106Medianigeria, iNDices, KCA Arts"],
+				["label" => "Catering | Confectioneries", "owners" => "Happy Catering Services"],
+				["label" => "Internet Media", "owners" => "ZyneDesk Inc, Innovation House"],
+			],
+			'supporters' => [
+				'XDynasty Records', 'Gerryblings Entertainment', 'EeZee Conceptz Limited', 'ScriptMusic', 'Beardman Clothings', 'Eden', 'Makarizo', 'Beulah Entertainment', 'Trebcom', 'Abraham Seed Productions', 'XcessIDEAS', 'MIRUS Empire', 'BAM', 'Veritz', 'Capstone Global Insight', 'OMAS Stitches'
+			],
 		];
 
 		return $credits;

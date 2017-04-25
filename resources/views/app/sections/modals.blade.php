@@ -1,7 +1,13 @@
-<section id="credits-and-supports" class="container-fluid">
-    <div id="event-credits" class="row" ng-controller="fbCreditsController">
+<section id="credits-and-supports" class="container-fluid" ng-controller="fbCreditsController">
+    <div class="row">
+        <div class="support-text text-center">This event is proudly supported by:</div>
+        <div class="supporters text-center">
+            <span class="typewriter"></span>
+        </div>
+    </div>
+    <div id="event-credits" class="row">
         <div class="credit-title text-center text-uppercase">Credits</div>
-        <div class="credit-item col-md-4 col-sm-6" ng-repeat="credit in credits">
+        <div class="credit-item col-md-4" ng-repeat="credit in credits.credits">
             <div class="credit-label text-center">@{{ credit.label }}</div>
             <div class="credit-owner text-center" ng-bind-html="credit.owners"></div>
         </div>

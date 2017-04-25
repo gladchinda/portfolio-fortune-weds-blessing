@@ -75,6 +75,7 @@ gulp.task('libs-js', () => {
 		BOWER_PATH + '/angular-sanitize/angular-sanitize.min.js',
 		ASSETS_PATH + '/js/jquery.blueimp-gallery.min.js',
 		BOWER_PATH + '/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js',
+		BOWER_PATH + '/typed.js/dist/typed.min.js',
 	];
 
 	return gulp.src(libs)

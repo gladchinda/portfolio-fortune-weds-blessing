@@ -637,26 +637,62 @@
 }
 
 #event-credits {
-	padding: 80px 100px;
+
+	padding: 80px 10%;
+
+	@media screen and (min-width: 992px) {
+		padding: 100px;
+	}
 
 	.credit-title {
-		font: 100 5em 'Open Sans', sans-serif;
-		color: lighten(@groom-color, 5%);
-		padding-bottom: 56px;
+		font: 400 3.6em 'Open Sans', sans-serif;
+		color: saturate(darken(@groom-color, 20%), 10%);
+		padding-bottom: 70px;
+
+		@media screen and (min-width: 992px) {
+			font-size: 5em;
+		}
 	}
 
 	.credit-item {
 
 		.credit-label {
-			font: 800 1.25em/2.4em 'Open Sans', sans-serif;
-			color: lighten(@button-background, 12.5%);
+			font: 700 1em/1.2em 'Open Sans', sans-serif;
+			padding-bottom: 10px;
+			color: lighten(@groom-color, 10%);
 		}
 
 		.credit-owner {
-			font: 400 1.25em/1.4em 'Roboto', sans-serif;
-			color: lighten(@groom-color, 2.5%);
-			padding-bottom: 36px;
+			font: 400 1.3em/1.35em 'Roboto', sans-serif;
+			color: desaturate(@attending-bg-color, 30%);
+			padding-bottom: 45px;
 		}
 
 	}
+}
+
+#credits-and-supports {
+
+	.support-text {
+		margin-top: 30px;
+		color: @groom-color;
+		font: 700 1.35em/1.15em 'Open Sans', sans-serif;
+		padding: 60px 100px 15px;
+	}
+
+	.supporters {
+		color: desaturate(@button-background, 60%);
+		font: 700 2.5em/1.2em 'Roboto', sans-serif;
+		padding-bottom: 100px;
+		border-bottom: 1px solid @base-border-color;
+
+		.typed-cursor {
+			font-size: 1.25em;
+		}
+
+		@media screen and (min-width: 992px) {
+			font-size: 4em;
+		}
+	}
+
 }

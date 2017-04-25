@@ -12,6 +12,7 @@
     "bootstrap": "^3.3.7",
     "lodash": "^4.17.4",
     "angular-sanitize": "^1.6.4",
-    "perfect-scrollbar": "^0.6.16"
+    "perfect-scrollbar": "^0.6.16",
+    "typed.js": "^1.1.7"
   }
 }

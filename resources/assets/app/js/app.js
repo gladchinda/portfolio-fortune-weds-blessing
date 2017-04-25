@@ -7,7 +7,7 @@
         .factory('httpDataLoader', ['$http', 'baseUrl', function($http, baseUrl) {
 
             var loadData = function(endpoint, scope, key) {
-                $http({
+                return $http({
                     method: 'GET',
                     url: baseUrl + endpoint,
                     cache: true,
@@ -170,9 +170,16 @@
 
     angular.module('fb.credits', [])
 
-        .controller('fbCreditsController', ['$scope', 'httpDataLoader', function($scope, httpDataLoader) {
+        .controller('fbCreditsController', ['$scope', 'httpDataLoader', '$window', function($scope, httpDataLoader, $window) {
 
-            httpDataLoader.loadData('credits', $scope, 'credits');
+            httpDataLoader.loadData('credits', $scope, 'credits').then(function() {
+                $window['jQuery']('#credits-and-supports .typewriter').first().typed({
+                    strings: $scope['credits'].supporters,
+                    loop: true,
+                    typeSpeed: 20,
+	                backDelay: 2500,
+                });
+            });
 
         }]);
 
