@@ -13,8 +13,8 @@
         </div>
         <div class="web-designer col-md-12">
             <div class="text-center">
-                <a href="https://twitter.com/gladchinda" title="Glad Chinda"><img src="https://pbs.twimg.com/profile_images/535575440274903041/yi5J5As4.jpeg" class="designer-avatar img-responsive"></a>
-                <span>Designed by <a href="https://twitter.com/gladchinda" class="designer-connect" title="Glad Chinda">@gladchinda</a></span>
+                <a href="https://www.linkedin.com/in/gladchinda" title="Glad Chinda" target="_blank"><img src="https://pbs.twimg.com/profile_images/535575440274903041/yi5J5As4.jpeg" class="designer-avatar img-responsive"></a>
+                <span>Designed by <a href="https://www.linkedin.com/in/gladchinda" class="designer-connect" title="Glad Chinda" target="_blank">@gladchinda</a></span>
             </div>
         </div>
     </div>
