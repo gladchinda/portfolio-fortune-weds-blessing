@@ -11,7 +11,7 @@
         <meta name="author" content="Glad Chinda <gladxeqs@gmail.com>">
 
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Roboto:100,300,400,500,700,900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico|Open+Sans:300,400,600,700,800|Roboto:100,300,400,500,700,900" rel="stylesheet">
 
         <!-- Mordernizr.js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>

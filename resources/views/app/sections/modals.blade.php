@@ -1,6 +1,6 @@
 <section id="credits-and-supports" class="container-fluid" ng-controller="fbCreditsController">
     <div class="row">
-        <div class="support-text text-center">This event is proudly supported by:</div>
+        <div class="support-text text-center">This wedding is proudly supported by</div>
         <div class="supporters text-center">
             <span class="typewriter"></span>
         </div>

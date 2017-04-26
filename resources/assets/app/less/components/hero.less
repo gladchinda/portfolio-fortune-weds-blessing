@@ -31,10 +31,42 @@
 			background: transparent url(@hero-background-url) no-repeat center;
 			background-size: cover;
 
-			& > .hero-float:extend(.cover-box) {}
+			& > .hero-float:extend(.cover-box) {
+
+				position: relative;
+				top: 60%;
+
+				.wedding-title {
+					padding-bottom: 20px;
+					font: 400 3.6em 'Pacifico', cursive;
+
+					@media screen and (max-width: 992px) {
+						font-size: 2.5em;
+					}
+
+					@media screen and (max-width: 640px) {
+						font-size: 1.8em;
+						padding-bottom: 12px;
+					}
+				}
+
+				.couple-name:first-child::after {
+					content: 'weds';
+					display: inline-block;
+					padding: 0.8em 1em 1em;
+					position: relative;
+					left: 0.25em;
+					top: 0.5em;
+					font-size: 0.4em;
+					vertical-align: super;
+					background: transparent url('https://s3.eu-west-2.amazonaws.com/fortunewedsblessing.com/images/static/heart_PNG680.png') no-repeat;
+					background-size: 100%;
+					background-origin: border-box;
+				}
+
+			}
 
 			.hero-action-btn:extend(.base-button) {
-				top: 70%;
 			    padding: 15px 75px;
 			    font: 400 160% 'Roboto', sans-serif;
 
