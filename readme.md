@@ -1,2 +1,2 @@
 # Fortune-Weds-Blessing
-This project contains the source of the website [fortunewedsblessing.com](http://fortunewedsblessing.com).
+This project contains the source of the website [https://fortune-weds-blessing.herokuapp.com](http://fortune-weds-blessing.herokuapp.com).
